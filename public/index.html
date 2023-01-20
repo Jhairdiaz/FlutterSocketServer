@@ -25,8 +25,16 @@
 
         socket.emit('mensaje', {nombre: 'Jhair'});
 
-        socket.on('mensaje',function( payload ){
+        socket.on('mensaje', function( payload ){
             console.log('Escuchando:', payload);
+        });
+
+        socket.on('nuevo-mensaje', function( payload ){
+            console.log('Escuchando:', payload);
+        });
+        socket.on('Active-Bands', function( bands ){
+            console.clear();
+            console.table(bands);
         });
 
     </script>
